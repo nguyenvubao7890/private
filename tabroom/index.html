@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TABROOM — Privacy and data handling</title>
+  <meta name="description" content="Product-specific privacy and local data handling notice.">
+  <style>
+
+:root {
+  color-scheme: light;
+  --ink: #22343c;
+  --muted: #758389;
+  --line: #d7dfe0;
+  --accent: #486b70;
+  --page: #f6f8f7;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); }
+a { color: var(--accent); text-underline-offset: 4px; }
+a:focus-visible { outline: 3px solid #83b1b5; outline-offset: 3px; }
+.mast {
+  border-bottom: 1px solid var(--line);
+  padding: 22px max(24px, calc((100vw - 1080px) / 2));
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+}
+.mast strong { font-size: 13px; letter-spacing: 2px; }
+.mast span { font: 11px monospace; color: var(--muted); }
+.wrap { max-width: 1080px; margin: auto; padding: 44px 24px 65px; }
+.intro { border-bottom: 2px solid var(--ink); padding-bottom: 30px; }
+.eyebrow { font: 11px monospace; letter-spacing: 2px; color: var(--accent); }
+h1 { font: 48px/1.1 Georgia, serif; letter-spacing: -1px; margin: 20px 0; }
+.lead { max-width: 690px; color: #60757c; font-size: 15px; line-height: 1.8; }
+.meta { display: flex; flex-wrap: wrap; gap: 26px; font-size: 11px; margin-top: 23px; }
+.meta b { display: block; font: 10px monospace; color: var(--muted); letter-spacing: 1px; margin-bottom: 6px; }
+.quick {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  margin: 28px 0 34px;
+  background: white;
+}
+.quick div { padding: 19px; border-right: 1px solid var(--line); }
+.quick div:last-child { border: 0; }
+.quick strong { display: block; margin-bottom: 7px; font-size: 13px; }
+.quick span { font-size: 12px; line-height: 1.7; color: var(--muted); }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 216px; gap: 54px; align-items: start; }
+nav { grid-column: 2; grid-row: 1; position: sticky; top: 24px; border-top: 1px solid var(--line); padding-top: 18px; }
+nav h2 { font: 10px monospace; letter-spacing: 2px; margin: 0 0 15px; }
+nav a { display: block; font-size: 11px; line-height: 1.5; margin: 10px 0; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+article { grid-column: 1; grid-row: 1; min-width: 0; }
+section { border-bottom: 1px solid var(--line); padding: 0 0 25px; margin-bottom: 29px; scroll-margin-top: 25px; }
+section h2 { display: flex; align-items: baseline; gap: 15px; font: 24px/1.35 Georgia, serif; margin: 0 0 17px; }
+section h2 span { flex-shrink: 0; font: 12px monospace; color: #8a9a9d; }
+section p { font-size: 14px; line-height: 1.85; margin: 15px 0; color: #51666e; overflow-wrap: anywhere; }
+footer { border-top: 2px solid var(--ink); padding-top: 21px; margin-top: 26px; display: flex; justify-content: space-between; gap: 18px; font-size: 11px; color: var(--muted); line-height: 1.8; }
+@media (max-width: 760px) {
+  .layout { display: flex; flex-direction: column; gap: 28px; }
+  nav { position: static; width: 100%; }
+  nav a { display: inline-block; margin: 6px 13px 6px 0; font-size: 11px; }
+  .quick { grid-template-columns: 1fr; }
+  .quick div { border-right: 0; border-bottom: 1px solid var(--line); padding: 15px; }
+  h1 { font-size: 36px; }
+  .wrap { padding-top: 32px; }
+  section h2 { font-size: 23px; }
+  section p { font-size: 14px; }
+  footer { flex-direction: column; }
+}
+@media print {
+  body { background: white; }
+  nav, .quick { display: none; }
+  .layout { display: block; }
+  .wrap { padding: 0; }
+  section { break-inside: avoid; }
+}
+  </style>
+</head>
+<body>
+  <div class="mast"><strong>TABROOM</strong><span>DATA NOTICE / 1.0.0</span></div>
+  <main class="wrap">
+    <header class="intro">
+      <div class="eyebrow">A PLAIN-LANGUAGE DATA RECORD</div>
+      <h1>Privacy, without the guesswork.</h1>
+      <p class="lead">A local record of your browser workspaces. This notice explains what is saved, what stays transient, and what happens when a room becomes a file or a set of open tabs.</p>
+      <div class="meta">
+        <div><b>EFFECTIVE DATE</b>8 September 2026</div>
+        <div><b>APPLIES TO</b>Chrome extension version 1.0.0</div>
+        <div><b>STORAGE MODEL</b>Local browser profile</div>
+      </div>
+    </header>
+    <div class="quick">
+      <div>
+        <strong>Local by design</strong>
+        <span>Rooms and restore reports stay in the Chrome profile. No application cloud account.</span>
+      </div>
+      <div>
+        <strong>URLs can be sensitive</strong>
+        <span>Titles, addresses and notes may reveal personal projects. Review before exporting.</span>
+      </div>
+      <div>
+        <strong>You choose the action</strong>
+        <span>Saving and restoring are deliberate. A snapshot is not a copy of a website session.</span>
+      </div>
+    </div>
+    <div class="layout">
+      <nav aria-label="Policy contents">
+        <h2>IN THIS NOTICE</h2>
+        <a href="#s01">01 / Scope of this notice</a>
+        <a href="#s02">02 / What you choose to save</a>
+        <a href="#s03">03 / The permissions requested</a>
+        <a href="#s04">04 / Live browser information</a>
+        <a href="#s05">05 / What a snapshot does not contain</a>
+        <a href="#s06">06 / Organizing tabs in Chrome</a>
+        <a href="#s07">07 / Restore choices and duplicate addresses</a>
+        <a href="#s08">08 / The local restore journal</a>
+        <a href="#s09">09 / Where information is stored</a>
+        <a href="#s10">10 / Network behavior</a>
+        <a href="#s11">11 / Analytics, advertising and external services</a>
+        <a href="#s12">12 / Exported libraries and recovery files</a>
+        <a href="#s13">13 / Importing a library</a>
+        <a href="#s14">14 / Retention and version history</a>
+        <a href="#s15">15 / Deletion and your controls</a>
+        <a href="#s16">16 / Failures and simultaneous views</a>
+        <a href="#s17">17 / Security boundaries</a>
+        <a href="#s18">18 / Children and sensitive uses</a>
+        <a href="#s19">19 / Changes to this notice</a>
+        <a href="#s20">20 / Contact and support</a>
+      </nav>
+      <article>
+        <section id="s01">
+          <h2><span>01</span>Scope of this notice</h2>
+          <p>
+            This notice describes TABROOM version 1.0.0, an extension for organizing Chrome tabs into named, locally saved
+            workspaces. It covers the extension interface, its background worker, local records and files the user chooses
+            to export.
+          </p>
+          <p>
+            TABROOM does not require an account and does not operate a cloud workspace service. Its primary purpose is to
+            save and restore a structure of URLs, windows, pinned tabs and Chrome tab groups.
+          </p>
+          <p>
+            This policy concerns the extension, not websites opened through it. A restored website may have its own
+            sign-in system, cookies, network requests and privacy notice. Saving a URL does not bring that website under
+            this policy.
+          </p>
+        </section>
+        <section id="s02">
+          <h2><span>02</span>What you choose to save</h2>
+          <p>
+            A workspace is created only when you use Save workspace or import a library. You choose its name and may add a
+            note. You can save selected tabs or all supported tabs in normal browser windows.
+          </p>
+          <p>
+            Each snapshot records supported web addresses, tab titles, order, pinned status, window labels and group
+            descriptions. Group descriptions include a title, a Chrome color and a collapsed-state flag. The snapshot also
+            has a local identifier, label and timestamp.
+          </p>
+          <p>
+            Addresses may contain search terms, document identifiers, account-related paths, query parameters or
+            fragments. TABROOM keeps these address components so that restoration and duplicate matching are meaningful.
+            Treat saved libraries as private browsing-related information.
+          </p>
+        </section>
+        <section id="s03">
+          <h2><span>03</span>The permissions requested</h2>
+          <p>
+            The tabs permission allows TABROOM to read titles and URLs of open tabs and to work with tab identifiers. It
+            supports the live browser overview, selection, exact-address duplicate detection, switching to a tab and
+            opening saved addresses.
+          </p>
+          <p>
+            The tabGroups permission supports reading group metadata and updating groups when you explicitly organize or
+            restore tabs. The sidePanel permission supplies the compact interface beside your current page. The full
+            workspace library is an extension page in a separate tab.
+          </p>
+          <p>
+            The storage permission is used for the local library and the last restore journal through
+            chrome.storage.local. No host permissions, history permission, cookies permission, content scripts or
+            scripting permission are declared in this build.
+          </p>
+        </section>
+        <section id="s04">
+          <h2><span>04</span>Live browser information</h2>
+          <p>
+            The Live tabs screen obtains the current normal windows and their tab lists from Chrome. The interface uses
+            titles, addresses, IDs, positions, pin states and group associations to show the current arrangement and
+            respond to your commands.
+          </p>
+          <p>
+            Live information in the interface is not automatically turned into an archive. The extension listens for
+            relevant tab and group changes to refresh the view; it does not maintain a chronological record of every page
+            you visit.
+          </p>
+          <p>
+            Private windows are excluded by the application. Browser internal pages may appear in the live browser list
+            when Chrome supplies them, but snapshots accept only HTTP and HTTPS addresses without embedded username or
+            password components.
+          </p>
+        </section>
+        <section id="s05">
+          <h2><span>05</span>What a snapshot does not contain</h2>
+          <p>
+            TABROOM does not copy the DOM, page text, form contents, page screenshots, downloaded documents, browsing Back
+            and Forward entries, or the internal state of a web application. It does not read passwords or authentication
+            cookies.
+          </p>
+          <p>
+            Tab titles and URLs can still reveal personal information even without page contents. A document title, search
+            phrase or private resource path can identify a person or a project. Avoid exporting a library that contains
+            information you should not disclose.
+          </p>
+          <p>
+            Restoring a snapshot is not restoration of a website login session or an unsent draft. Save your work within
+            the website itself before closing it. TABROOM does not close pre-existing tabs as part of its normal restore
+            operation.
+          </p>
+        </section>
+        <section id="s06">
+          <h2><span>06</span>Organizing tabs in Chrome</h2>
+          <p>
+            Grouping, moving, dragging and switching tabs are actions you initiate in the interface. They change the
+            active browser arrangement, rather than merely editing a visual imitation of the tab strip. A moved tab can
+            leave its former group.
+          </p>
+          <p>
+            Pinned tabs cannot be grouped by this application. Grouping requires the selected tabs to be in one window;
+            you can move them first. TABROOM checks live identifiers again because a tab may have closed since it was
+            displayed.
+          </p>
+          <p>
+            These operations do not submit web forms or issue commands inside a website. They can bring a website into
+            view, and that site may then perform its normal foreground behavior. Chrome remains responsible for the actual
+            tab operations.
+          </p>
+        </section>
+        <section id="s07">
+          <h2><span>07</span>Restore choices and duplicate addresses</h2>
+          <p>
+            The restore preview lets you choose a snapshot and select individual entries. You can skip an address already
+            open, focus its existing tab, or deliberately open another copy. Matching uses the complete normalized URL,
+            including its query and fragment.
+          </p>
+          <p>
+            Newly restored entries are opened in new normal windows corresponding to the saved window structure. The
+            worker opens them sequentially and applies supported pinning and group metadata. Existing tabs are not moved
+            merely to resemble a saved room.
+          </p>
+          <p>
+            A restore can partially succeed when a tab disappears, Chrome rejects an operation or storage becomes
+            unavailable. An entry may have opened even if a later group update failed. Review the result before retrying;
+            the extension does not promise an all-or-nothing browser rollback.
+          </p>
+        </section>
+        <section id="s08">
+          <h2><span>08</span>The local restore journal</h2>
+          <p>
+            The background worker keeps one restore journal in local storage. It includes a local job ID, time, total
+            entry count, completed entry descriptions, relevant addresses, resulting tab IDs, newly created window IDs and
+            any reported errors.
+          </p>
+          <p>
+            This journal helps explain a partial or interrupted restore and prevents an unattended retry from silently
+            opening duplicate sets. After interruption, the interface asks you to review and acknowledge the report.
+            Restoration does not automatically resume after a browser restart.
+          </p>
+          <p>
+            The last completed report can remain until another restore replaces it or you erase the library data. It is
+            not sent to a publisher. The ordinary library export contains rooms and snapshots, not the separate journal.
+          </p>
+        </section>
+        <section id="s09">
+          <h2><span>09</span>Where information is stored</h2>
+          <p>
+            The library and restore journal are stored under this extension in your local Chrome profile using
+            chrome.storage.local. This version does not use chrome.storage.sync and does not provide an extension-operated
+            cross-device synchronization service.
+          </p>
+          <p>
+            Application limits are forty rooms, twelve snapshots per room, three hundred tabs per snapshot, and a
+            three-megabyte serialized library budget. The restore journal is separate from that library budget. Chrome can
+            impose other storage or device constraints.
+          </p>
+          <p>
+            These records are not encrypted by TABROOM with a separate user-controlled password. Device encryption,
+            profile protection, browser backups and enterprise settings are outside the extension. Other people with
+            access to an unlocked profile may be able to see your workspaces.
+          </p>
+        </section>
+        <section id="s10">
+          <h2><span>10</span>Network behavior</h2>
+          <p>
+            TABROOM has no analytics endpoint, account server, remote database or remote code loader. The extension
+            interface does not fetch website favicons; it uses locally generated letter marks so that browsing the library
+            does not itself query icon services.
+          </p>
+          <p>
+            When you restore a URL, Chrome navigates to that website at your request. That navigation can contact the
+            website, follow redirects, use existing browser cookies and load third-party resources selected by the
+            website. This is distinct from sending the library to TABROOM.
+          </p>
+          <p>
+            Privacy links open an HTML page packaged with the extension. Imported library files are parsed locally. The
+            extension does not request the contents of every saved page merely to validate or display the list.
+          </p>
+        </section>
+        <section id="s11">
+          <h2><span>11</span>Analytics, advertising and external services</h2>
+          <p>
+            This build contains no advertising placement, affiliate-link rewriting, behavioral analytics, usage profiling
+            or crash-report upload integration. It does not calculate a productivity score or sell browsing-related
+            records.
+          </p>
+          <p>
+            There is no third-party SDK embedded for cloud storage, identity, payment, AI processing or remote typography.
+            Interface assets and executable code are included in the package. System fonts may differ according to the
+            operating system.
+          </p>
+          <p>
+            Chrome Web Store distribution and Chrome itself are separate services. Their installation, update, security
+            and diagnostic practices are governed by their own settings and notices. TABROOM does not gain access to those
+            services’ account records.
+          </p>
+        </section>
+        <section id="s12">
+          <h2><span>12</span>Exported libraries and recovery files</h2>
+          <p>
+            Export library creates a JSON-based .tabroom file containing your rooms, notes and snapshot records. The data
+            is readable without a password and can expose complete URLs. The file is intended as a personal backup or an
+            intentional transfer.
+          </p>
+          <p>
+            If a stored library cannot be read normally, the recovery interface can offer the raw local library as a JSON
+            download before resetting it. Such a file may contain private text, old entries or malformed records and
+            should be handled cautiously.
+          </p>
+          <p>
+            Downloaded files are separate copies. Removing the extension, deleting a room or resetting local storage does
+            not remove copies in Downloads, synced folders, email attachments, external drives or other people’s devices.
+          </p>
+        </section>
+        <section id="s13">
+          <h2><span>13</span>Importing a library</h2>
+          <p>
+            An import is initiated through a file picker. TABROOM does not scan your disk. It reads the selected JSON
+            file, checks the expected format, applies limits, validates web addresses and reconstructs the supported
+            fields.
+          </p>
+          <p>
+            Imported rooms are added as independent copies with new local identifiers; existing rooms are not silently
+            overwritten. The interface presents the number of rooms before adding them. An invalid or oversized import is
+            rejected instead of replacing the current library.
+          </p>
+          <p>
+            You are responsible for checking whether an imported file contains links you trust before restoring them.
+            Schema validation is not a promise that every destination is safe, appropriate, available or unchanged since
+            the file was created.
+          </p>
+        </section>
+        <section id="s14">
+          <h2><span>14</span>Retention and version history</h2>
+          <p>
+            Saved rooms do not expire on a timer in this version. Snapshots remain until you delete them or the room,
+            reset the local library, remove the extension’s data, or lose the relevant browser profile storage.
+          </p>
+          <p>
+            Adding a snapshot retains earlier snapshots until the twelve-version limit is reached. The application does
+            not silently delete the oldest version to make space. You must choose a version to remove or start another
+            room.
+          </p>
+          <p>
+            Live lists and in-memory selection state are different from saved history. A browser restart or closing the
+            interface can discard that transient state while leaving completed library writes intact. Keep an exported
+            copy when a workspace is important.
+          </p>
+        </section>
+        <section id="s15">
+          <h2><span>15</span>Deletion and your controls</h2>
+          <p>
+            You can delete a particular snapshot while retaining at least one in its room, delete a room and its
+            snapshots, or use the Help panel’s erase control to remove all local room data and restore reports.
+          </p>
+          <p>
+            Deleting saved records does not close the corresponding websites or remove data held by those websites. It
+            also does not clear Chrome history or cookies because TABROOM does not control those stores.
+          </p>
+          <p>
+            Uninstalling or clearing extension data is another browser-level control. Managed devices may have
+            organization-specific retention and backup behavior. We cannot promise forensic erasure of storage media or
+            removal from a backup made outside this extension.
+          </p>
+        </section>
+        <section id="s16">
+          <h2><span>16</span>Failures and simultaneous views</h2>
+          <p>
+            Library changes carry a revision number. If another TABROOM view saved first, a stale change is rejected and
+            you are asked to refresh instead of silently replacing the newer library. This is a data-integrity control,
+            not remote synchronization.
+          </p>
+          <p>
+            Normal save operations wait for Chrome to acknowledge the storage write before reporting success. Quota errors
+            and malformed libraries are reported. A success indicator is not a guarantee against later device failure,
+            profile deletion or external modification.
+          </p>
+          <p>
+            The worker serializes library mutations and limits restores to one active operation. Abrupt process
+            termination can still leave a partial set of browser tabs, which is why the restore journal and preview remain
+            important.
+          </p>
+        </section>
+        <section id="s17">
+          <h2><span>17</span>Security boundaries</h2>
+          <p>
+            Incoming file values and website titles are treated as text in the interface. Stored URLs are limited to
+            supported web schemes. The extension declares a local-code content security policy and does not expose an
+            externally connectable website API.
+          </p>
+          <p>
+            These design choices reduce some risks but do not make a Chrome profile a secure vault. A compromised
+            operating system, malicious browser installation, exposed backup or careless export can still reveal a
+            library.
+          </p>
+          <p>
+            Protect the device and account used to unlock it. Review destinations before restoring unfamiliar libraries.
+            Never place passwords, recovery codes or other secrets into workspace notes simply because the extension
+            stores them locally.
+          </p>
+        </section>
+        <section id="s18">
+          <h2><span>18</span>Children and sensitive uses</h2>
+          <p>
+            TABROOM is a general-purpose organization tool and does not collect age, date of birth or parental
+            information. It is not designed to identify children or provide an age-verification service.
+          </p>
+          <p>
+            Parents, guardians, schools and organizations should decide whether storing and exporting browsing-related
+            information is suitable for their users. The absence of an extension server does not make every saved address
+            appropriate to share.
+          </p>
+          <p>
+            Do not treat this tool as an approved record system for regulated, highly confidential or emergency work
+            without your own review. The extension makes no certification about compliance with a particular institutional
+            retention or security requirement.
+          </p>
+        </section>
+        <section id="s19">
+          <h2><span>19</span>Changes to this notice</h2>
+          <p>
+            This notice is specific to the packaged behavior of version 1.0.0 and has an effective date of 8 September
+            2026. Future releases should update it when their data practices, capabilities or storage formats change.
+          </p>
+          <p>
+            Additional permissions, a future network service or account synchronization would require a fresh explanation
+            and any browser approval that applies. This notice is not advance consent for undisclosed future collection.
+          </p>
+          <p>
+            You can inspect the policy packaged with your installed build and review store release information before
+            updating. The present extension does not operate a mailing list or collect an email address to send
+            policy-change announcements.
+          </p>
+        </section>
+        <section id="s20">
+          <h2><span>20</span>Contact and support</h2>
+          <p>
+            The publisher is the developer identified on the verified Chrome Web Store listing for TABROOM. Use the
+            support or developer-contact method displayed on that listing. This package does not contain an invented email
+            address or an in-app support submission endpoint.
+          </p>
+          <p>
+            For troubleshooting, describe the browser version, operating system, action taken and visible error. Redact
+            private tab titles and addresses before sending a screenshot or example library. A complete personal workspace
+            is rarely needed to explain a problem.
+          </p>
+          <p>
+            If you voluntarily contact the publisher through another service, that service and the publisher’s support
+            process handle the message separately. This local extension cannot retrieve your library remotely or delete
+            copies already sent to someone else.
+          </p>
+        </section>
+      </article>
+    </div>
+    <footer>
+      <span>TABROOM · Local records. Deliberate actions.</span>
+      <span>This notice describes the packaged build, not the websites you visit.</span>
+    </footer>
+  </main>
+</body>
+</html>
