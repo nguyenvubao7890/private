@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STEPDRAFT — Privacy and data handling</title>
+  <meta name="description" content="Product-specific privacy and local data handling notice.">
+  <style>
+
+:root {
+  color-scheme: light;
+  --ink: #22343c;
+  --muted: #758389;
+  --line: #d7dfe0;
+  --accent: #486b70;
+  --page: #f6f8f7;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); }
+a { color: var(--accent); text-underline-offset: 4px; }
+a:focus-visible { outline: 3px solid #83b1b5; outline-offset: 3px; }
+.mast {
+  border-bottom: 1px solid var(--line);
+  padding: 22px max(24px, calc((100vw - 1080px) / 2));
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+}
+.mast strong { font-size: 13px; letter-spacing: 2px; }
+.mast span { font: 11px monospace; color: var(--muted); }
+.wrap { max-width: 1080px; margin: auto; padding: 44px 24px 65px; }
+.intro { border-bottom: 2px solid var(--ink); padding-bottom: 30px; }
+.eyebrow { font: 11px monospace; letter-spacing: 2px; color: var(--accent); }
+h1 { font: 48px/1.1 Georgia, serif; letter-spacing: -1px; margin: 20px 0; }
+.lead { max-width: 690px; color: #60757c; font-size: 15px; line-height: 1.8; }
+.meta { display: flex; flex-wrap: wrap; gap: 26px; font-size: 11px; margin-top: 23px; }
+.meta b { display: block; font: 10px monospace; color: var(--muted); letter-spacing: 1px; margin-bottom: 6px; }
+.quick {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  margin: 28px 0 34px;
+  background: white;
+}
+.quick div { padding: 19px; border-right: 1px solid var(--line); }
+.quick div:last-child { border: 0; }
+.quick strong { display: block; margin-bottom: 7px; font-size: 13px; }
+.quick span { font-size: 12px; line-height: 1.7; color: var(--muted); }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 216px; gap: 54px; align-items: start; }
+nav { grid-column: 2; grid-row: 1; position: sticky; top: 24px; border-top: 1px solid var(--line); padding-top: 18px; }
+nav h2 { font: 10px monospace; letter-spacing: 2px; margin: 0 0 15px; }
+nav a { display: block; font-size: 11px; line-height: 1.5; margin: 10px 0; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+article { grid-column: 1; grid-row: 1; min-width: 0; }
+section { border-bottom: 1px solid var(--line); padding: 0 0 25px; margin-bottom: 29px; scroll-margin-top: 25px; }
+section h2 { display: flex; align-items: baseline; gap: 15px; font: 24px/1.35 Georgia, serif; margin: 0 0 17px; }
+section h2 span { flex-shrink: 0; font: 12px monospace; color: #8a9a9d; }
+section p { font-size: 14px; line-height: 1.85; margin: 15px 0; color: #51666e; overflow-wrap: anywhere; }
+footer { border-top: 2px solid var(--ink); padding-top: 21px; margin-top: 26px; display: flex; justify-content: space-between; gap: 18px; font-size: 11px; color: var(--muted); line-height: 1.8; }
+@media (max-width: 760px) {
+  .layout { display: flex; flex-direction: column; gap: 28px; }
+  nav { position: static; width: 100%; }
+  nav a { display: inline-block; margin: 6px 13px 6px 0; font-size: 11px; }
+  .quick { grid-template-columns: 1fr; }
+  .quick div { border-right: 0; border-bottom: 1px solid var(--line); padding: 15px; }
+  h1 { font-size: 36px; }
+  .wrap { padding-top: 32px; }
+  section h2 { font-size: 23px; }
+  section p { font-size: 14px; }
+  footer { flex-direction: column; }
+}
+@media print {
+  body { background: white; }
+  nav, .quick { display: none; }
+  .layout { display: block; }
+  .wrap { padding: 0; }
+  section { break-inside: avoid; }
+}
+  </style>
+</head>
+<body>
+  <div class="mast"><strong>STEPDRAFT</strong><span>DATA NOTICE / 1.0.0</span></div>
+  <main class="wrap">
+    <header class="intro">
+      <div class="eyebrow">A PLAIN-LANGUAGE DATA RECORD</div>
+      <h1>Privacy, without the guesswork.</h1>
+      <p class="lead">A clear boundary between your private working draft and the guide you share. This notice explains original screenshots, local storage, redaction and offline exports.</p>
+      <div class="meta">
+        <div><b>EFFECTIVE DATE</b>8 September 2026</div>
+        <div><b>APPLIES TO</b>Chrome extension version 1.0.0</div>
+        <div><b>STORAGE MODEL</b>Local browser profile</div>
+      </div>
+    </header>
+    <div class="quick">
+      <div>
+        <strong>Capture on purpose</strong>
+        <span>A toolbar action or shortcut captures the visible website. No automatic click recording.</span>
+      </div>
+      <div>
+        <strong>Drafts retain originals</strong>
+        <span>Private projects include unredacted source images. Keep these files secure.</span>
+      </div>
+      <div>
+        <strong>Exports flatten pixels</strong>
+        <span>HTML and Markdown contain rendered images, not editable covers over hidden originals.</span>
+      </div>
+    </div>
+    <div class="layout">
+      <nav aria-label="Policy contents">
+        <h2>IN THIS NOTICE</h2>
+        <a href="#s01">01 / Scope and purpose</a>
+        <a href="#s02">02 / Deliberate screenshot capture</a>
+        <a href="#s03">03 / The permissions requested</a>
+        <a href="#s04">04 / Which pages are supported</a>
+        <a href="#s05">05 / Source information accompanying a step</a>
+        <a href="#s06">06 / Draft documents and image records</a>
+        <a href="#s07">07 / Originals and redactions are different</a>
+        <a href="#s08">08 / Image import and replacement</a>
+        <a href="#s09">09 / Where drafts are saved</a>
+        <a href="#s10">10 / Resource limits and storage failures</a>
+        <a href="#s11">11 / Network and external processing</a>
+        <a href="#s12">12 / Analytics and other third parties</a>
+        <a href="#s13">13 / Shared HTML documents</a>
+        <a href="#s14">14 / Markdown bundles</a>
+        <a href="#s15">15 / Private project backups</a>
+        <a href="#s16">16 / Project import and integrity</a>
+        <a href="#s17">17 / Retention, undo and unused images</a>
+        <a href="#s18">18 / Deletion and export copies</a>
+        <a href="#s19">19 / Conflicts, recovery and security</a>
+        <a href="#s20">20 / Children, updates and contact</a>
+      </nav>
+      <article>
+        <section id="s01">
+          <h2><span>01</span>Scope and purpose</h2>
+          <p>
+            This notice describes STEPDRAFT version 1.0.0, a local Chrome extension for creating screenshot-based
+            instructions. It covers deliberate captures, draft editing, original image storage, annotations, local exports
+            and user controls.
+          </p>
+          <p>
+            STEPDRAFT does not require an account, operate a document-sharing server or automatically record every click.
+            Its purpose is to help you collect selected website views, explain them and produce a guide that can be opened
+            offline.
+          </p>
+          <p>
+            The websites you capture, the browser distributing the extension, and services through which you later send a
+            guide have their own data practices. This notice does not replace those services’ notices or authorize
+            capturing someone else’s confidential information.
+          </p>
+        </section>
+        <section id="s02">
+          <h2><span>02</span>Deliberate screenshot capture</h2>
+          <p>
+            A capture starts when you use Capture this step in the toolbar popup, request a capture from the collection
+            interface where permission is available, or invoke the configured capture keyboard shortcut. Nothing starts
+            recording automatically at installation.
+          </p>
+          <p>
+            The extension requests an image of the currently visible website viewport. It does not stitch a long page,
+            capture the whole desktop, record a video, listen to a microphone or collect background-tab screenshots on a
+            schedule.
+          </p>
+          <p>
+            Anything visibly rendered in that viewport may appear in the image, including private messages, profile
+            pictures, account identifiers or information you have typed. Review the page before capturing, and do not
+            assume the extension can recognize sensitive content for you.
+          </p>
+        </section>
+        <section id="s03">
+          <h2><span>03</span>The permissions requested</h2>
+          <p>
+            The activeTab permission supplies temporary access associated with your browser action or shortcut. It is used
+            to identify the active page and request a visible-tab screenshot. This build does not declare all-sites host
+            access.
+          </p>
+          <p>
+            The sidePanel permission provides a compact collection view beside the website. The storage permission retains
+            the active-guide identifier and small settings or capture-error details through chrome.storage.local. Drafts
+            and images use an extension-local IndexedDB database.
+          </p>
+          <p>
+            There is no tabs permission for reading an unrestricted global tab list, no scripting permission, no content
+            script, no cookies or history permission, and no microphone or camera permission. Creating the editor tab is
+            not a request to inspect every website.
+          </p>
+        </section>
+        <section id="s04">
+          <h2><span>04</span>Which pages are supported</h2>
+          <p>
+            The application’s capture flow accepts ordinary HTTP and HTTPS pages when Chrome grants the necessary access.
+            Browser internal pages, file addresses, extension pages and private-window workflows are outside the supported
+            capture scope.
+          </p>
+          <p>
+            A permission grant can end when you navigate to a different origin. Use the toolbar action or shortcut again
+            on the new website rather than expecting a sidebar button to retain unrestricted access. Chrome can also
+            reject a capture for policy or platform reasons.
+          </p>
+          <p>
+            The worker compares the active tab and its address before and after capture. If they changed, it discards that
+            capture and reports the problem. This check reduces wrong-tab mistakes but cannot prove that every element on
+            a rapidly changing page stayed constant.
+          </p>
+        </section>
+        <section id="s05">
+          <h2><span>05</span>Source information accompanying a step</h2>
+          <p>
+            A captured step normally receives the website’s tab title as its initial title. You can edit that title and
+            write instructions. The capture record also contains a local image identifier and the source origin, such as
+            the scheme and domain.
+          </p>
+          <p>
+            The source-origin field is derived from the address without retaining its path, query or fragment in that
+            field. The full address is temporarily examined to check page identity during capture. A visible screenshot or
+            your own text can nevertheless contain complete addresses.
+          </p>
+          <p>
+            Chrome error messages may include technical context supplied by the browser. A capture error can be retained
+            as a small local error record for the toolbar workflow. Errors are not uploaded to a crash-reporting service.
+          </p>
+        </section>
+        <section id="s06">
+          <h2><span>06</span>Draft documents and image records</h2>
+          <p>
+            A draft document contains its title, introduction, creation and update times, revision number, ordered steps
+            and local identifiers. A step contains its title, explanatory text, optional source origin, optional original
+            image reference, annotations and crop rectangle.
+          </p>
+          <p>
+            Annotations store types and normalized image coordinates, along with label text or marker numbers where
+            needed. Cropping stores the selected region. These are editing instructions; they do not immediately rewrite
+            the original screenshot in the draft.
+          </p>
+          <p>
+            Original images are stored separately in the same extension-local database as PNG data URLs. Copying a step
+            can reuse an image reference. Image records are not exposed to a webpage through a content script or an
+            externally connectable API.
+          </p>
+        </section>
+        <section id="s07">
+          <h2><span>07</span>Originals and redactions are different</h2>
+          <p>
+            The editor intentionally keeps the original screenshot so you can undo a redaction, reset a crop or revise the
+            guide. A black rectangle in the editor therefore does not mean the private original has disappeared from local
+            draft storage.
+          </p>
+          <p>
+            When preparing shared HTML or Markdown, the application draws annotations into a new raster image and applies
+            redactions as opaque pixel covers. Redactions are drawn last, and the selected crop is applied to the rendered
+            image.
+          </p>
+          <p>
+            The shared export does not include an editable overlay over an unredacted original. However, the cover must be
+            large enough and correctly positioned. The application does not automatically locate all sensitive information
+            or certify a document as anonymized.
+          </p>
+        </section>
+        <section id="s08">
+          <h2><span>08</span>Image import and replacement</h2>
+          <p>
+            You can explicitly choose a PNG file to add or replace a screenshot. The file picker grants access to that
+            chosen file; the extension does not scan folders, search your image collection or read unrelated local files.
+          </p>
+          <p>
+            The importer checks size and PNG dimensions before decoding, then redraws the image as PNG for editing. It
+            rejects corrupt or excessive inputs. This is a format and resource check, not a content-safety or ownership
+            check.
+          </p>
+          <p>
+            Replacing an existing screenshot clears that step’s annotations and crop after confirmation because
+            coordinates from another image may be wrong. The old original can remain available for undo until unused
+            images are cleared or the relevant guide is deleted.
+          </p>
+        </section>
+        <section id="s09">
+          <h2><span>09</span>Where drafts are saved</h2>
+          <p>
+            Documents and originals are saved in the extension’s IndexedDB database in the local Chrome profile. Small
+            preferences, the active-guide identifier and capture-error details use chrome.storage.local. This build does
+            not use Chrome storage synchronization.
+          </p>
+          <p>
+            STEPDRAFT does not encrypt drafts with a separate password. Browser-profile protections, device encryption,
+            enterprise backup policies and access by other users of the same unlocked device remain outside the
+            application.
+          </p>
+          <p>
+            Browser storage is not unlimited and is not a substitute for a backup. Local records may be lost if the
+            extension is removed, the profile is deleted, storage is cleared or a device fails. Export important projects
+            to a location you control.
+          </p>
+        </section>
+        <section id="s10">
+          <h2><span>10</span>Resource limits and storage failures</h2>
+          <p>
+            The application supports up to twenty guides, forty steps per guide and one hundred annotations per step.
+            Individual PNG inputs are limited to twelve megabytes, sixteen megapixels and sixteen thousand three hundred
+            eighty-four pixels on either edge.
+          </p>
+          <p>
+            The local image safety budget is one hundred ten million data-URL characters. This is an application limit
+            rather than a guarantee of available disk space. Chrome may impose a smaller effective quota or reject a write
+            for another reason.
+          </p>
+          <p>
+            Private project imports and exports have a forty-five-megabyte limit. Shared rendered image exports also have
+            a safety budget. A failed operation should produce a visible message; reduce image size, split a guide or
+            export and remove older work before retrying.
+          </p>
+        </section>
+        <section id="s11">
+          <h2><span>11</span>Network and external processing</h2>
+          <p>
+            No screenshot, draft, note, annotation or export is automatically sent to an application server. This build
+            contains no upload endpoint, remote-code loader, AI analysis service, external image compressor or online
+            publishing feature.
+          </p>
+          <p>
+            The underlying website can continue using its own network resources while it is open. Capturing its visible
+            output does not stop or change that behavior. The browser’s normal site connections are not document uploads
+            performed by STEPDRAFT.
+          </p>
+          <p>
+            The extension packages its executable code and icon assets locally and uses system fonts. It does not retrieve
+            a web font or a remote template when you open the editor. The packaged privacy page can be read without
+            contacting a policy-hosting service.
+          </p>
+        </section>
+        <section id="s12">
+          <h2><span>12</span>Analytics and other third parties</h2>
+          <p>
+            There are no advertising trackers, behavioral analytics events, audience profiles, affiliate links or
+            automatic diagnostic uploads in this version. STEPDRAFT does not measure which websites are most often
+            captured for a remote report.
+          </p>
+          <p>
+            No third-party SDK is included for login, payments, cloud editing, screenshot classification or file
+            synchronization. The ZIP writer used for Markdown bundles is packaged application code, not an external
+            conversion service.
+          </p>
+          <p>
+            Chrome and its extension store have their own installation, update, security and account policies. A file you
+            place in a cloud-synced folder can be uploaded by that folder’s software even though STEPDRAFT itself has no
+            synchronization service.
+          </p>
+        </section>
+        <section id="s13">
+          <h2><span>13</span>Shared HTML documents</h2>
+          <p>
+            Standalone HTML export contains the guide title, introduction, ordered step titles, instructions and flattened
+            PNG images embedded in the file. It can be opened offline in a browser without installing the extension.
+          </p>
+          <p>
+            The normal shared export does not include the editable project structure, original screenshot records or
+            source-origin fields. It may still contain sensitive text you typed or information visibly left uncovered in
+            the rendered images.
+          </p>
+          <p>
+            The document contains no application script and uses a restrictive content security policy. This does not
+            prevent a recipient from copying, editing or redistributing the file. Export only material you are authorized
+            to share.
+          </p>
+        </section>
+        <section id="s14">
+          <h2><span>14</span>Markdown bundles</h2>
+          <p>
+            Markdown export creates a ZIP with a README.md file and numbered PNG files in an images folder. Those PNGs use
+            the same flattened rendering process as the HTML output, including the redaction and crop instructions.
+          </p>
+          <p>
+            The archive does not contain a hidden original-image folder or the editable project. Step text is escaped for
+            Markdown, and the generated image paths are fixed local paths. The bundle does not depend on a remote image
+            host.
+          </p>
+          <p>
+            A recipient’s Markdown application may have its own preview, synchronization or indexing behavior. STEPDRAFT
+            cannot control what happens after you transfer the archive or extract its contents into another application’s
+            workspace.
+          </p>
+        </section>
+        <section id="s15">
+          <h2><span>15</span>Private project backups</h2>
+          <p>
+            A .stepdraft file is deliberately different from a shared guide. It contains the editable document,
+            local-style metadata, annotation instructions and original PNG images needed to continue editing. Redacted
+            details can be recovered from those original images.
+          </p>
+          <p>
+            The export interface warns that the file contains originals and requires explicit acknowledgment. This file is
+            appropriate for a private backup or a trusted collaborator who is permitted to see the underlying screenshots,
+            not for a public handoff.
+          </p>
+          <p>
+            Project files are ordinary readable JSON and image data, not encrypted containers. Protect them with your own
+            file-access controls. A redaction visible after reimport does not change the fact that the private file
+            includes its unredacted source.
+          </p>
+        </section>
+        <section id="s16">
+          <h2><span>16</span>Project import and integrity</h2>
+          <p>
+            Project import reads only the file you select, checks its schema, limits and required image references, and
+            decodes its PNG images. The application creates a new guide with new identifiers instead of overwriting an
+            existing guide silently.
+          </p>
+          <p>
+            A malformed file, missing image, excessive project or invalid annotation coordinate is rejected. Format
+            validation is not a guarantee that a screenshot is appropriate or that the person sending the project had
+            permission to capture it.
+          </p>
+          <p>
+            If you receive a project from another person, assume it contains original screenshots until you have reviewed
+            it. Do not mistake an editable project for a sanitized export simply because the visible annotations contain
+            black rectangles.
+          </p>
+        </section>
+        <section id="s17">
+          <h2><span>17</span>Retention, undo and unused images</h2>
+          <p>
+            Guides remain locally until you delete them, erase application data or lose the relevant browser storage.
+            There is no automatic age-based expiration in this version. Captures append to the selected active guide,
+            subject to its limits.
+          </p>
+          <p>
+            Undo and redo history are held in memory in the current editor, up to sixty structural edit states. Original
+            images can outlive a removed step so that undo remains possible. Closing a view does not itself purge all
+            unused originals.
+          </p>
+          <p>
+            The Help interface offers Clear unused originals. Save other views and close them before using this control
+            because their undo histories may still refer to removed image records. Clearing unused images is distinct from
+            flattening a shared export.
+          </p>
+        </section>
+        <section id="s18">
+          <h2><span>18</span>Deletion and export copies</h2>
+          <p>
+            Deleting a guide removes its document and image records not referenced by another saved guide. The erase-all
+            control clears the extension’s guides, images and small stored preferences after explicit confirmation.
+          </p>
+          <p>
+            These actions do not delete HTML, ZIP or private project files previously downloaded, nor copies sent through
+            email or stored on another device. Delete or recall such copies through the system that holds them.
+          </p>
+          <p>
+            Clearing local records is an application-level operation, not a promise of forensic erasure from storage
+            hardware, system backups or organization-managed profiles. Browser uninstall and data-clearing controls
+            provide additional ways to remove local extension records.
+          </p>
+        </section>
+        <section id="s19">
+          <h2><span>19</span>Conflicts, recovery and security</h2>
+          <p>
+            Saves carry document revisions. When a different view or a new capture changed the guide first, stale edits
+            are rejected instead of silently overwriting the newer version. The editor can offer an unsaved private
+            project export before reloading the saved guide.
+          </p>
+          <p>
+            Input text is rendered as text, project structures are validated, and extension messages are restricted to the
+            extension’s own pages. The application includes a local-code security policy. None of these measures replaces
+            protection of the operating system or unlocked Chrome profile.
+          </p>
+          <p>
+            Do not rely on a brief saved indicator as a lifetime preservation guarantee. Review exported files
+            independently and keep backups appropriate to the sensitivity of the images. Do not send a private project
+            merely to demonstrate a minor interface problem.
+          </p>
+        </section>
+        <section id="s20">
+          <h2><span>20</span>Children, updates and contact</h2>
+          <p>
+            STEPDRAFT is a general-purpose documentation tool. It does not ask for age, birth date or a child profile. A
+            responsible adult or organization should decide whether capturing, retaining and sharing website images is
+            suitable for the people using the device.
+          </p>
+          <p>
+            This notice applies to version 1.0.0 and is effective on 8 September 2026. A future network feature,
+            additional permission or different retention behavior should be described in an updated policy. The current
+            build collects no email address for policy announcements.
+          </p>
+          <p>
+            The publisher is the developer identified on the verified Chrome Web Store listing for STEPDRAFT. Use that
+            listing’s support or developer-contact method. No invented contact address or in-app message submission
+            service is bundled here; redact screenshots and omit originals unless support genuinely needs them.
+          </p>
+        </section>
+      </article>
+    </div>
+    <footer>
+      <span>STEPDRAFT · Local records. Deliberate actions.</span>
+      <span>This notice describes the packaged build, not the websites you visit.</span>
+    </footer>
+  </main>
+</body>
+</html>
